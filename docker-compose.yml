@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    container_name: hairbox
+    build: .
+    environment:
+      - DEBUG=app:*
+    tty: true
+    ports:
+      - "3880:3000"
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    command: yarn start:dev
